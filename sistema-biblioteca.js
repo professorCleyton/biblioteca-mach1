@@ -38,8 +38,10 @@ switch (recebeFuncionalidade) {
     let encontrouLivro = "";
     for (let livro of armazenaLivros) {
       encontrouLivro = livro.indexOf(recebeCodigoOuISBN);
+      console.log('indice retornado',encontrouLivro);
       if (encontrouLivro != -1) {
         mensagem = `Livro:${livro[0]} ${livro[1]} ${livro[2]}`;
+        break;
       } else {
         mensagem = "Livro não encontrado!";
       }
@@ -51,12 +53,12 @@ switch (recebeFuncionalidade) {
     );
     let encontrouLivroExcluir = "";
     let contador = 0;
-    debugger;
     for (let livro of armazenaLivros) {
         encontrouLivroExcluir = livro.indexOf(excluirLivro);
         if(encontrouLivroExcluir !=-1){
             armazenaLivros.splice(contador,1);
             mensagem = `Livro excluído com sucesso!`;
+            break;
         }else{
             mensagem = "O livro não foi encontrado para exclusão!"
         }
